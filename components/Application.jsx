@@ -42,7 +42,7 @@ const ApplicationForm = () => {
               onChange={(e) => setDays(Number(e.target.value))}
               className="w-full bg-gray-800 text-white px-4 py-2 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              {[1, 2, 3, 4, 5].map((day) => (
+              {[1, 2, 3, 4, 5,6,7].map((day) => (
                 <option key={day} value={day}>
                   {day} {day === 1 ? "day" : "days"}
                 </option>

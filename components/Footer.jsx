@@ -4,14 +4,14 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-800 to-blue-900 text-white dark:from-gray-900 dark:to-blue-950 mt-auto">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        {/* School Header */}
+        {/*  Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-3">Sanskrithi School of Engineering</h2>
           <p className="text-lg text-white/90 max-w-3xl mx-auto">
             Empowering future engineers with knowledge, skills, and values since 2010.
           </p>
 
-          {/* School Contact Info */}
+          {/*  Contact Info */}
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 mt-8">
             <div className="grid md:grid-cols-3 gap-6 text-sm">
               <div className="flex items-start gap-3">
@@ -98,7 +98,7 @@ const Footer = () => {
  </div>
 
 
-        {/* Footer Bottom */}
+        {/* Footer  */}
         <div className="border-t border-white/20 pt-6 text-center">
           <p className="text-white/90 text-lg mb-2">
             For any queries, problems, or future information, please contact the respective departments above.
