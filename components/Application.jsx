@@ -2,11 +2,10 @@
 import { useState } from "react";
 
 const ApplicationForm = () => {
-  const [days, setDays] = useState(1);
+  const [days, setDays] = useState("1");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#6b1d07] via-[#9a3310] to-[#b5441a]
- py-12 px-4 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#5e1604] via-[#9a3310] to-[#e25b1e] py-12 px-4 flex items-center justify-center">
       <div className="w-full max-w-xl bg-white/10 backdrop-blur-md shadow-2xl rounded-2xl p-8 text-white">
         <h1 className="text-3xl font-bold mb-8 text-center text-white">
           Permission Application
@@ -54,30 +53,46 @@ const ApplicationForm = () => {
             className="w-full bg-white/5 px-4 py-3 rounded-md border border-white/20 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-300"
           />
 
-          {/* Days */}
+          {/* Days or Type */}
           <div>
             <label className="block mb-1 text-sm text-orange-200 font-medium">
-              How Many Days?
+              Leave Duration / Type
             </label>
             <select
               value={days}
-              onChange={(e) => setDays(Number(e.target.value))}
-              className="w-full bg-white/5 px-4 py-3 rounded-md border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-orange-300"
+              onChange={(e) => setDays(e.target.value)}
+              className="w-full bg-white/5 px-4 py-3 rounded-md border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-orange-300"
             >
-              {[1, 2, 3, 4, 5, 6, 7].map((day) => (
+              {/* 1 to 7 Days */}
+              {[1, 2, 3, 4, 5, 6, 7].map((d) => (
                 <option
-                  key={day}
-                  value={day}
+                  key={d}
+                  value={d}
                   className="bg-[#9a3310] text-white"
                 >
-                  {day} {day === 1 ? "day" : "days"}
+                  {d} {d === 1 ? "day" : "days"}
                 </option>
               ))}
+
+              {/* Special Types */}
+              <option value="festival" className="bg-[#9a3310] text-white">
+                Festival Leave
+              </option>
+              <option value="academic" className="bg-[#9a3310] text-white">
+                Academic Leave
+              </option>
             </select>
-            <p className="text-sm text-orange-100 mt-1">
-              Total Days Requested: {days}
-            </p>
           </div>
+
+          {/* Summary */}
+          <p className="text-sm text-orange-100 mt-2">
+            Selected:{" "}
+            {["festival", "academic"].includes(days)
+              ? days === "festival"
+                ? "Festival Leave"
+                : "Academic Leave"
+              : `${days} ${days === "1" ? "day" : "days"}`}
+          </p>
 
           {/* Submit Button */}
           <button

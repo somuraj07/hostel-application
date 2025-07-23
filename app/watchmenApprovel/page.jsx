@@ -74,7 +74,7 @@ const WatchmanDetails = () => {
           </tbody>
         </table>
 
-        {/* 🔴 Not Yet Returned Section */}
+        {/*Not Yet Returned Section */}
         <div className="mt-6">
           <h3 className="text-lg font-semibold text-[#9a3310] mb-2">
             {notReturned.length} Person{notReturned.length !== 1 && 's'} Not Yet Returned
